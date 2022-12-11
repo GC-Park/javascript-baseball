@@ -19,7 +19,19 @@ class App {
         if (computer === Number(userInput[index])) strikeTotal++
     })
     return strikeTotal
-}
+  }
+
+  ballCount(computerInput, userInput) {
+    let ballTotal = 0
+    computerInput.map((computer, index) => {
+        if (
+            computer !== Number(userInput[index]) &&
+            computerInput.includes(Number(userInput[index]))
+        )
+            ballTotal++
+    })
+    return ballTotal
+  }
 
   makeRandomNumber(){
     const computer = [];
