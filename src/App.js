@@ -13,6 +13,14 @@ class App {
     this.userInputNumber()
   }
 
+  strikeCount(computerInput, userInput) {
+    let strikeTotal = 0
+    computerInput.map((computer, index) => {
+        if (computer === Number(userInput[index])) strikeTotal++
+    })
+    return strikeTotal
+}
+
   makeRandomNumber(){
     const computer = [];
     while (computer.length < 3) {
