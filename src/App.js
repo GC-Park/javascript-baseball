@@ -1,13 +1,16 @@
 const MissionUtils = require('@woowacourse/mission-utils')
 class App {
   #computerInput;
-
+  #userInput;
+  
   constructor(){
     this.#computerInput=[]
+    this.#userInput=[]
   }
 
   play() {
     this.#computerInput=this.makeRandomNumber()
+    this.userInputNumber()
   }
 
   makeRandomNumber(){
@@ -19,6 +22,13 @@ class App {
       }
     }
     return computer
+  }
+
+  userInputNumber(){
+    MissionUtils.Console.readLine('숫자를 입력해주세요 : ', (input)=>{
+      this.#userInput=input.split('');
+      console.log(this.#userInput)
+    })
   }
 }
 
