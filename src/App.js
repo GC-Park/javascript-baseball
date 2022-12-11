@@ -80,7 +80,21 @@ class App {
             MissionUtils.Console.close()
         }
     })
-}
+  }
+  exceptionHandler(userInput) {
+    if (userInput.length !== 3) return 1
+
+    let checkString=0
+    userInput.map((user) => {
+        if (isNaN(user)) checkString=1;
+    })
+    if(checkString===1) return 1
+
+    if (userInput.includes('0')) return 1
+
+    const repeatCheck = new Set(userInput)
+    if (repeatCheck.size !== 3) return 1
+  }
 }
 
 const app = new App();
