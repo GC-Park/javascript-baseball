@@ -2,7 +2,7 @@ const MissionUtils = require('@woowacourse/mission-utils')
 class App {
   #computerInput;
   #userInput;
-  
+
   constructor(){
     this.#computerInput=[]
     this.#userInput=[]
@@ -27,7 +27,6 @@ class App {
   userInputNumber(){
     MissionUtils.Console.readLine('숫자를 입력해주세요 : ', (input)=>{
       this.#userInput=input.split('');
-      console.log(this.#userInput)
     })
   }
 }
