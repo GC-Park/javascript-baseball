@@ -68,6 +68,8 @@ class App {
   userInputNumber(){
     MissionUtils.Console.readLine('숫자를 입력해주세요 : ', (input)=>{
       this.#userInput=input.split('');
+      const validation = this.exceptionHandler(this.#userInput)
+      if (validation) throw new Error("입력 값이 잘못 되었습니다. 게임을 종료합니다.")
       this.compareNumber(this.#userInput);
     })
   }
@@ -79,6 +81,7 @@ class App {
             MissionUtils.Console.print('게임 종료')
             MissionUtils.Console.close()
         }
+        else throw new Error("입력 값이 잘못 되었습니다. 게임을 종료합니다.")
     })
   }
   exceptionHandler(userInput) {
