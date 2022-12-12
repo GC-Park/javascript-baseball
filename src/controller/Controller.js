@@ -4,6 +4,7 @@ const BaseballModel = require("../model/BaseballModel")
 const {userNumberInputException} = require("../validation")
 const MissionUtils = require('@woowacourse/mission-utils')
 const { EXCEPTION } = require("../constant")
+
 class Controller {
   constructor(){
     this.model = new BaseballModel();
@@ -15,7 +16,6 @@ class Controller {
   }
 
   play(){
-    this.model.makeRandomNumber();
     this.userNumberChoice();
   }
 
