@@ -16,6 +16,7 @@ class Controller {
   }
 
   play(){
+    this.model.makeRandomNumber();
     this.userNumberChoice();
   }
 
@@ -31,6 +32,7 @@ class Controller {
     InputView.finishOrRetry((answer)=>{
       if (Number(answer) === 1) this.play()
         else if (Number(answer) === 2) {
+            OutputView.gameFinish()
             MissionUtils.Console.close()
         }
         else throw new Error(EXCEPTION)

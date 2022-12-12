@@ -7,7 +7,6 @@ class BaseballModel {
   constructor(){
     this.#computerInput=[]
     this.#userInput=[]
-    this.makeRandomNumber();
   }
 
   get computerNumber(){
